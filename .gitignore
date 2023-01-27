@@ -1,0 +1,22 @@
+### IntelliJ IDEA ###
+/.idea/
+.idea
+*.iws
+*.iml
+*.ipr
+*.dylib
+
+
+HELP.md
+target/
+output/
+build/
+!**/src/main/**/target/
+!**/src/test/**/target/
+**/.DS_Store
+.env
+
+
+### Secure Bundle ###
+*.yml
+*.properties
