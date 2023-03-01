@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<SplitPane dividerPositions="0.38" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="and.codechallenge.challenge2.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400" prefWidth="300">
+         <children>
+            <ChoiceBox fx:id="startingOrientation" layoutX="118.0" layoutY="35.0" onAction="#rotateAnt" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutY="39.0" text="Starting Orientation" />
+            <ChoiceBox fx:id="startingGridSize" layoutX="118.0" layoutY="61.0" onAction="#updateGridSize" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutY="65.0" text="Grid Starting Size" />
+            <ChoiceBox fx:id="stepsPerRefresh" layoutX="118.0" layoutY="87.0" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutY="91.0" text="Steps per Refresh" />
+            <ChoiceBox fx:id="delayTime" layoutX="118.0" layoutY="113.0" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutY="117.0" text="Delay" />
+            <ChoiceBox fx:id="maxRounds" layoutX="118.0" layoutY="139.0" prefHeight="26.0" prefWidth="106.0" />
+            <Label layoutY="143.0" text="Max Rounds" />
+            <Button layoutX="129.0" layoutY="358.0" mnemonicParsing="false" onAction="#setAntFree" text="Set Ant Free" />
+            <Button fx:id="nextStep" layoutX="129.0" layoutY="322.0" mnemonicParsing="false" onAction="#playNext" text="Play Next" />
+            <Button fx:id="resetButton" layoutX="19.0" layoutY="358.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+         </children>
+    </AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400" prefWidth="300">
+        <children>
+            <GridPane fx:id="langtonAntGridPane" alignment="CENTER" gridLinesVisible="true" prefHeight="400" prefWidth="367.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" percentHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+        </children>
+    </AnchorPane>
+  </items>
+</SplitPane>

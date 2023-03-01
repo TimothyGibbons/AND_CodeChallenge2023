@@ -1,22 +1,38 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
 ### IntelliJ IDEA ###
-/.idea/
-.idea
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
 *.iws
 *.iml
 *.ipr
-*.dylib
 
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-HELP.md
-target/
-output/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 build/
-!**/src/main/**/target/
-!**/src/test/**/target/
-**/.DS_Store
-.env
+!**/src/main/**/build/
+!**/src/test/**/build/
 
+### VS Code ###
+.vscode/
 
-### Secure Bundle ###
-*.yml
-*.properties
+### Mac OS ###
+.DS_Store
