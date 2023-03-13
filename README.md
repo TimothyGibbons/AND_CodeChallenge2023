@@ -20,7 +20,6 @@ Good luck! (edited)
 
 ![langant_360.gif](images/langant_360.gif)
 
-
 ### 🏆 Challenge 3 - "Text In Transit" 🔤
 
 @here The challenge is to build a fixed-width, right-to-left text scroller capable of taking a string parameter and screen width as inputs. Seems simple, right?
