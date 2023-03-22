@@ -99,7 +99,10 @@ public class Colours {
     public static String getUnicodeStringParams(String ... params) {
         return UNICODE + CSI + Arrays.stream(params).reduce((c1, c2) -> c1 + ";" + c2).get() + FINAL_BYTE;
     }
-
+    
+    public String getUnicodeString(Format ... format) {
+        return getUnicodeString(null, null, format);
+    }
     public String getUnicodeString(Colour colour, Format ... format) {
         return getUnicodeString(colour, null, format);
     }
@@ -116,7 +119,7 @@ public class Colours {
         return UNICODE + CSI + concat + FINAL_BYTE;
     }
 
-    public String getUnicodeStringRGB(int r, int g, int b, Format ... format) {
+    public String getUnicodeTextRGB(int r, int g, int b, Format ... format) {
         String string = Arrays.stream(format).map(f -> f.getCode()).reduce((f1, f2) -> f1 + ";" + f2).orElse("");
 
         string += ";38;2;"+r+";"+g+";"+b;

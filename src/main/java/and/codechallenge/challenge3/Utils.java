@@ -1,36 +1,48 @@
 package and.codechallenge.challenge3;
 
+import and.codechallenge.challenge3.consolecolour.Colour;
+import and.codechallenge.challenge3.consolecolour.Colours;
+import and.codechallenge.challenge3.consolecolour.Format;
+
 public class Utils {
 
     private static final String EMPTY_PLACEHOLDER = " ";
     public static final String BOLD = "[B]";
     public static final String BOLD_END = "[/B]";
-    public static final String UNDERLINE = "[B]";
-    public static final String UNDERLINE_END = "[/B]";
+    public static final String UNDERLINE = "[U]";
+    public static final String UNDERLINE_END = "[/U]";
     public static final String COLOUR = "(\\[C:)?#?([A-Fa-f0-9]{6})(\\])?";
     public static final String COLOUR_END = "[/C]";
 
     public String getViewString(String string,
-                                int breakPoint,
                                 int offset,
                                 int screenWidth,
                                 int space) {
         if (string == null)
             throw new NullPointerException("Input value cannot be null");
 
-//        String processed = processString(string);
+        int breakPoint = string.length()+space;
+        String processedString = processString(string);
 
-        String retString = extendString(string, screenWidth, space);
-
+        String retString = extendString(processedString, screenWidth, space);
+    
+        System.out.println(retString);
+        
         int newOffset = (offset > breakPoint) ?
-                (offset % (string.length() + space)) : offset;
+                (offset % (processedString.length() + space)) : offset;
 
         return retString.substring(newOffset, newOffset+screenWidth);
     }
 
-//    private String processString(String string) {
-//
-//    }
+    private String processString(String string) {
+        Colours colours = new Colours();
+        return string.replace(BOLD, colours.getUnicodeString(Format.BOLD))
+                .replace(BOLD_END, colours.getUnicodeString(Format.REGULAR))
+                .replace(UNDERLINE, colours.getUnicodeString(Format.UNDERLINE))
+                .replace(UNDERLINE_END, colours.getUnicodeString(Format.REGULAR))
+                .replaceAll(COLOUR, colours.getUnicodeString(Colour.CYAN))
+                .replace(COLOUR_END, colours.getUnicodeString(Format.REGULAR));
+    }
 
     public String extendString(String string,
                                int screenWidth,
